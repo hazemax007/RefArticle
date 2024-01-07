@@ -1,0 +1,76 @@
+<div class="container">
+  <h2>Détails de la catégorie</h2>
+    <div class="category-details">
+      <div class="row">
+        <div class="col-md-8">
+          <h1 class="display-4 text-primary"> {{category?.name}} </h1>
+          <p class="lead"> {{category?.description}} </p>
+        </div>
+        <div class="col-md-4">
+          <img [src]="category.categoryImages[0]?.url" alt="Category Image" class="img-fluid rounded shadow">
+        </div>
+      </div>
+    </div>
+    <br>
+    <h2>Référence article (catégorie {{category?.name}}) </h2>
+    <div class="category-details">
+      <h3>Répondre les questions pour générer la référence de votre article</h3>
+      <br>
+      <div class="row" *ngFor="let question of category.questions; let i = index;">
+        <div class="col-md-3"></div>
+          <div class="col-md-3">
+            <div class="text-center">
+              <h4 class="anchor-hover" (click)="openModal(question , i)"> question {{i+1}} </h4>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="text-center">
+              <p>
+                <span *ngFor="let answer of answers">
+                  <!-- Afficher les réponses pour chaque question -->
+                  <span *ngIf="question?.questionId == answer.question?.questionId && username == answer.user?.username">
+                   <h4> {{ answer.content }}</h4> <!-- Afficher la propriété content de la réponse -->
+                  </span>
+                </span>
+              </p>
+            </div>
+          </div>
+          <div class="col-md-3"></div>
+          </div>
+          <div>
+            <br>
+            <div class="text-center">
+              <h4>Générer Référence</h4>
+            <button type="submit" class="btn btn-success " (click)="getReference()">Valider</button>
+            <br>
+            <br>
+            <br>
+            <h4> {{reference}} </h4>
+            </div>
+          </div>     
+    </div>
+    <!-- Modal -->
+  <div class="modal" #exampleModal tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ajouter votre réponse</h5>
+          <button type="button" class="close" (click)="closeModal()" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="responseForm" (ngSubmit)="answerQuestion()">
+            <div class="form-group">
+              <label for="content"> {{question?.content}} </label>
+              <input type="text" class="form-control" id="content" name="content" formControlName="content" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  

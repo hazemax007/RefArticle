@@ -1,0 +1,74 @@
+ body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin-top: 50px;
+}
+
+.category-details {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.category-info {
+  padding-right: 20px;
+}
+
+.display-4 {
+  margin-bottom: 20px;
+}
+
+.text-primary {
+  color: #007bff;
+}
+
+.lead {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.details {
+  margin-bottom: 30px;
+}
+
+.details i {
+  font-size: 20px;
+  color: #007bff;
+}
+
+.details span {
+  font-size: 16px;
+  color: #333;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.img-fluid:hover {
+  transform: scale(1.05);
+}
+
+.shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.anchor-hover {
+  text-decoration: none; /* Remove default underline */
+  transition: color 0.3s ease; /* Add transition effect for color change */
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+.anchor-hover:hover {
+  color: blue; /* Change color on hover */
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Configurateur SEM</title>
+</head>
+<body>
+  <h1>Configurateur SEM</h1>
+
+  <form id="configurator-form">
+    <label for="question1">Question 1:</label>
+    <select id="question1">
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+    </select>
+    <br>
+    <label for="question2">Question 2:</label>
+    <select id="question2">
+      <option value="D">D</option>
+      <option value="E">E</option>
+      <option value="F">F</option>
+    </select>
+    <br>
+    <label for="question3">Question 3:</label>
+    <select id="question3">
+      <option value="G">G</option>
+      <option value="H">H</option>
+      <option value="I">I</option>
+    </select>
+    <br>
+    <br>
+
+    <!-- Ajoutez d'autres questions ici -->
+
+    <button type="button" onclick="generateReference()">Générer la référence</button>
+  </form>
+  <br>
+  <br>
+
+  <div id="reference"></div>
+
+  <script src="index.js"></script>
+</body>
+</html>
